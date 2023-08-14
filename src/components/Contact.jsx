@@ -14,7 +14,7 @@ const Contact = () => {
                 <input className="border-2 border-rose-800 p-2 my-2" type="text" placeholder="Email" name="email" id="email"/>
                 <label htmlFor="message" className="font-bold">Message</label>
                 <textarea className="border-2 border-rose-800 p-2 my-2" name="message" rows="10" placeholder="Message" id="message"></textarea>
-                <button className="rounded-full border-2 border-rose-800 hover:bg-rose-700 hover:text-white px-6 py-3 my-8 mx-auto">Submit</button>
+                <button className="rounded-full border-2 border-rose-800 hover:bg-rose-700 hover:text-white px-6 py-3 my-8 mx-auto font-semibold">Submit</button>
             </form>
         </div>
     );
