@@ -8,6 +8,7 @@ import { Link } from "react-scroll";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
+    // navbar links
     const links = [
         {name: "Home", destination: "home"},
         {name: "About", destination: "about"},
@@ -19,7 +20,7 @@ const Navbar = () => {
     const renderedFullScreenLink = links.map((link) => {
             return (
                 <li key={link.name}>
-                    <Link to={link.destination} smooth={true} duration={500}>
+                    <Link to={link.destination} smooth={true} duration={500} className={link.name === "Portfolio" ? "text-rose-700" : ""}>
                         {link.name}
                     </Link>
                 </li>
@@ -28,7 +29,7 @@ const Navbar = () => {
 
     const renderedMobile = links.map((link) => {
         return (
-            <li className="py-6 text-3xl font-bold text-white" key={link.name}>
+            <li className="py-4 text-2xl font-bold text-white" key={link.name}>
                 <Link to={link.destination} smooth={true} duration={500} onClick={() => setOpen(!open)}>
                     {link.name}
                 </Link>
@@ -37,15 +38,15 @@ const Navbar = () => {
     })
 
     const contacts = [
-        {name: "LinkedIn", img: Linkedin , destination: "www.linkedin.com/in/r-sripen" },
+        {name: "LinkedIn", img: Linkedin , destination: "https://www.linkedin.com/in/r-sripen" },
         {name: "GitHub", img: Github, destination: "https://github.com/CodePawsDev" },
     ];
 
     const renderedContact = contacts.map((contact) => {
         return (
-            <li key={contact.name} className="w-[190px] h-[120px] flex justify-between items-center ml-[-110px] hover:ml-[-10px] duration-300 bg-black">
+            <li key={contact.name} className="w-[190px] h-[100px] flex justify-between items-center ml-[-110px] hover:ml-[-10px] duration-300 bg-black">
                 <a className="flex justify-between items-center w-full text-white" href={contact.destination}>
-                    <div className="flex items-center justify-center flex-grow">{contact.name}</div>                        
+                    <div className="flex items-center justify-center flex-grow font-bold">{contact.name}</div>                        
                     <img className="w-[40px] h-[40px] md:w-[60px] md:h-[60px]" src={contact.img} alt={contact.name + " icon"} />               
                 </a>
             </li>
@@ -61,8 +62,8 @@ const Navbar = () => {
                 {renderedFullScreenLink}
             </ul>
 
-            {/* Hamburger */}
-            <div onClick={() => setOpen(!open)} className="md:hidden z-20">
+            {/* Hamburger ยังมี bug เรื่องแนวนอนทำไงให้แถบโชว์*/}
+            <div onClick={() => setOpen(!open)} className="md:hidden z-20"> 
                 { !open ? <FaBars size={30} /> : <FaTimes size={30} />}
             </div>
 
@@ -74,7 +75,7 @@ const Navbar = () => {
 
             {/* side contact bar */}
             <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
-                <ul>{renderedContact}</ul>
+                <ul>{renderedContact}</ul>             
             </div>
         </div>
     )

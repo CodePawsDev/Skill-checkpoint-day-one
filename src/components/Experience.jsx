@@ -7,8 +7,8 @@ import Tailwind from "../assets/tailwind.png";
 import Python from "../assets/python.png";
 import Github from "../assets/github.png";
 
-
 const Experience = () => {
+
     const experiences = [
         {name: "HTML", img: htmlImg},
         {name: "CSS", img: Css},
@@ -21,7 +21,7 @@ const Experience = () => {
 
     const renderedExperience = experiences.map((exp) => {
         return (
-            <div key={exp.name} className="shadow-md shadow-[#040c16] hover:scale-110 duration:500 pt-4 cursor-pointer">
+            <div key={exp.name} className="shadow-md shadow-[#6c6f74] hover:scale-110 duration:500 pt-4 cursor-pointer rounded-md">
                 <img className="w-20 mx-auto" src={exp.img} alt={exp.name + " icon"}/>
                 <p className="my-4 font-bold">{exp.name}</p>
             </div>
@@ -29,16 +29,16 @@ const Experience = () => {
     })
 
     return (              
-        <div name="experience" className="w-full h-screen bg-[#fff]">
+        <div name="experience" className="w-full h-auto bg-[#fff]">
             {/* container */}
-            <div className="max-w-[1000px] mx-auto p-4 flex flex-col jusify-center w-full h-full">
-                <div className="mt-20">
+            <div className="max-w-[1000px] mx-auto p-4 flex flex-col jusify-center w-full h-full mt-[100px]">
+                <section>
                     <p className="text-4xl font-bold inline border-b-4 border-rose-700">Experience</p>
                     <p className="py-4 text-2xl">These are the technology I've worked with</p>
-                </div>
-                <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 ">
+                </section>
+                <section className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 ">
                     {renderedExperience}                    
-                </div>
+                </section>
             </div>
         </div>
     )

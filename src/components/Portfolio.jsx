@@ -19,48 +19,47 @@ const Portfolio = () => {
     const renderedProjects = projects.map((project, index) => {
         return (
                 // grid-item
-                <div className="group">
+                <div className="group" key={index}>
                     <div
-                    key={index}
                     style={{ backgroundImage: `url(${project.img})` }}
                     className="shadow-lg shadow-[#040c16] container rounded-md flex justify-center items-center mx-auto content-div group"
                 >
                     {/* hover effect */}
-                    <div className="group-hover:opacity-100 opacity-0 group-hover:bg-gray-200 transition-colors w-full h-full pt-14">
-                        <div className="text-4xl font-bold text-black tracking-wider text-center">
-                            {project.name}
+                        <div className="group-hover:opacity-100 opacity-0 rounded-md group-hover:bg-gray-200 transition-colors w-full h-full pt-14">
+                            <section className="text-4xl font-bold text-black tracking-wider text-center">
+                                {project.name}
+                            </section>
+                            <section className="pt-8 text-center">
+                                <a href={project.refDemo}>
+                                    <button className="text-center rounded-lg px-4 py-3 m-2 bg-rose-900 text-white font-bold text-lg">
+                                        Demo
+                                    </button>
+                                </a>
+                                <a href={project.refCode}>
+                                    <button className="text-center rounded-lg px-4 py-3 m-2 bg-rose-900 text-white font-bold text-lg">
+                                        Code
+                                    </button>
+                                </a>
+                            </section>
                         </div>
-                        <div className="pt-8 text-center">
-                            <a href={project.refDemo}>
-                                <button className="text-center rounded-lg px-4 py-3 m-2 bg-rose-900 text-white font-bold text-lg">
-                                    Demo
-                                </button>
-                            </a>
-                            <a href={project.refCode}>
-                                <button className="text-center rounded-lg px-4 py-3 m-2 bg-rose-900 text-white font-bold text-lg">
-                                    Code
-                                </button>
-                            </a>
-                        </div>
+                        
                     </div>
-                </div>
-
                 </div>
         )
     })
 
     return (
-        <div name="portfolio" className="w-full md:h-screen bg-[#be123c] text-white">
+        <div name="portfolio" className="w-full h-auto bg-[#be123c] text-white">
             <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-                <div className="pb-8">
+                <section className="pb-8 mt-[100px]">
                     <p className="text-4xl font-bold inline border-b-4 border-black">Portfolio</p>
                     <p className="py-6 text-xl">Check out some of my recent work</p>
-                </div>
+                </section>
 
                 {/* container */}
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <section className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                     {renderedProjects}                 
-                </div>
+                </section>
             </div>
         </div>
     )
