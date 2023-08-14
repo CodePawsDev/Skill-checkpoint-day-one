@@ -1,23 +1,7 @@
 import React from "react"; 
-import htmlImg from "../assets/html.png";
-import Css from "../assets/css.png";
-import Javascript from "../assets/javascript.png";
-import reactImg from "../assets/react.png";
-import Tailwind from "../assets/tailwind.png";
-import Python from "../assets/python.png";
-import Github from "../assets/github.png";
+import { experiences } from "../data/experience";
 
 const Experience = () => {
-
-    const experiences = [
-        {name: "HTML", img: htmlImg},
-        {name: "CSS", img: Css},
-        {name: "JavaScript", img: Javascript},
-        {name: "React", img: reactImg},
-        {name: "Tailwind", img: Tailwind},
-        {name: "Python", img: Python},
-        {name: "GitHub", img: Github}
-    ];
 
     const renderedExperience = experiences.map((exp) => {
         return (
@@ -29,9 +13,9 @@ const Experience = () => {
     })
 
     return (              
-        <div name="experience" className="w-full h-auto bg-[#fff]">
+        <div name="experience" className="w-full h-auto sm:h-screen bg-[#fff]">
             {/* container */}
-            <div className="max-w-[1000px] mx-auto p-4 flex flex-col jusify-center w-full h-full mt-[100px]">
+            <div className="max-w-[1000px] mx-auto px-4 pt-[90px] flex flex-col jusify-center w-full h-full">
                 <section>
                     <p className="text-4xl font-bold inline border-b-4 border-rose-700">Experience</p>
                     <p className="py-4 text-2xl">These are the technology I've worked with</p>

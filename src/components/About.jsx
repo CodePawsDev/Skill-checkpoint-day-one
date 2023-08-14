@@ -5,19 +5,19 @@ const About = () => {
 
     return (
         <div name="about" className="w-full h-screen bg-[#be123c] text-white flex flex-col justify-center items-center">
-            <section className="max-w-[1000px] w-full grid grid-cols-2 gap-8 mt-6">
+            <section className="max-w-[1000px] w-full grid grid-cols-2 gap-8 pt-6 sm:pl-5">
                 <div className="pb-8 pl-4">
                     <p className="text-4xl font-bold inline border-b-4 border-black">
                         About
                     </p>
                 </div>
             </section>
-            <section className="max-w-[1000px] grid sm:grid-cols-2 gap-8 px-4 mb-6">
-                <div className="text-2xl font-bold sm:text-4xl">
+            <section className="max-w-[1000px] grid sm:grid-cols-2 gap-8 px-4">
+                <div className="text-2xl font-bold sm:text-4xl sm:pl-5">
                     <p>Former clinical psychologist turned full-stack developer</p>
                 </div>
                 <div>
-                    <p className="text-lg">{shortIntroduction}</p>
+                    <p className="text-lg pr-5">{shortIntroduction}</p>
                 </div>
             </section>                   
         </div>
