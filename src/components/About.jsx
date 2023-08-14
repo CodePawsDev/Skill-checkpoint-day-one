@@ -1,28 +1,26 @@
 import React from "react";
 
 const About = () => {
+    const shortIntroduction = "Fueled by limitless curiosity, I enjoy exploring new technologies, gaining fresh insights, and crafting user-focused solutions. By merging my expertise in psychology with technical skills, my aim is to simplify and enhance life. Sharing insights and innovations with the community is where my heart lies, empowering me to make a positive impact in the tech world."
+
     return (
-        <div name="about" className="w-full h-screen bg-[#be123c] text-white">
-            <div className="flex flex-col justify-center items-center w-full h-full">
-                <div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
-                    <div className="pb-8 pl-4">
-                        <p className="text-4xl font-bold inline border-b-4 border-black">
-                            About
-                        </p>
-                    </div>
-                    <div></div>
-                    </div>
-                    <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
-                        <div className="text-2xl font-bold sm:text-4xl">
-                            <p>Hi, I'm Rungsipohn, nice to meet you. Please take a look around!</p>
-                        </div>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis reprehenderit officiis harum accusamus ea similique deserunt laudantium quis. Dolores nesciunt laudantium pariatur repudiandae. Rerum pariatur doloremque quisquam quasi officia sapiente.</p>
-                        </div>
-                    </div>                   
-                 
+        <div name="about" className="w-full h-screen bg-[#be123c] text-white flex flex-col justify-center items-center">
+            <section className="max-w-[1000px] w-full grid grid-cols-2 gap-8 pt-6 sm:pl-5">
+                <div className="pb-8 pl-4">
+                    <p className="text-4xl font-bold inline border-b-4 border-black">
+                        About
+                    </p>
                 </div>
-            </div>
+            </section>
+            <section className="max-w-[1000px] grid sm:grid-cols-2 gap-8 px-4">
+                <div className="text-2xl font-bold sm:text-4xl sm:pl-5">
+                    <p>Former clinical psychologist turned full-stack developer</p>
+                </div>
+                <div>
+                    <p className="text-lg pr-5">{shortIntroduction}</p>
+                </div>
+            </section>                   
+        </div>
     )
 }
 
